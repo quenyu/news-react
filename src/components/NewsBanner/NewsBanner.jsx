@@ -1,5 +1,5 @@
 import { Image } from '../Image/Image';
-import { formatTimeAgo } from '../helpers/formatTimeAgo';
+import { formatTimeAgo } from '../../helpers/formatTimeAgo';
 
 import styles from './styles.module.css';
 
