@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 import { NewsBanner } from '../../components/NewsBanner/NewsBanner';
 import { getNews } from '../../api/apiNews';
-import { NewList } from '../../components/NewList/NewList';
+import { NewsList } from '../../components/NewsList/NewsList';
 import { Skeleton } from '../../components/Skeleton/Skeleton';
 import { Pagination } from '../../components/Pagination/Pagination';
 
@@ -53,7 +53,7 @@ export const Main = () => {
         ? <NewsBanner item={news[0]} />
         : <Skeleton />}
 
-      <NewList news={news}/>
+      <NewsList news={news}/>
 
       <Pagination
         handleNextPage={handleNextPage}
@@ -63,7 +63,7 @@ export const Main = () => {
         currentPage={currentPage}
       />
 
-      {!isLoading ? <NewList news={news} /> : <Skeleton count={10} type={'item'} />}
+      {!isLoading ? <NewsList news={news} /> : <Skeleton count={10} type={'item'} />}
 
       <Pagination
         handleNextPage={handleNextPage}
@@ -74,7 +74,7 @@ export const Main = () => {
       />
         : <Skeleton count={1} type={'banner'} />
 
-      {!isLoading ? <NewList news={news} /> : <Skeleton count={10} type={'item'} />}
+      {!isLoading ? <NewsList news={news} /> : <Skeleton count={10} type={'item'} />}
     </main>
   )
 }
