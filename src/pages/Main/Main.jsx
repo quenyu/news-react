@@ -12,8 +12,10 @@ export const Main = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
+        setIsLoading(true)
         const response = await getNews();
         setNews(response.news);
+        setIsLoading(false)
       } catch (e) {
         console.log("ERROR", e)
       }
