@@ -47,9 +47,11 @@ export const Main = () => {
 
   return (
     <main className={styles.main}>
-      {news.length > 0
+      {news.length > 0 && !isLoading
         ? <NewsBanner item={news[0]} />
         : <Skeleton />}
+
+      <NewList news={news}/>
 
       <Pagination
         handleNextPage={handleNextPage}
@@ -68,6 +70,9 @@ export const Main = () => {
         totalPages={totalPages}
         currentPage={currentPage}
       />
+        : <Skeleton count={1} type={'banner'} />
+
+      {!isLoading ? <NewList news={news} /> : <Skeleton count={10} type={'item'} />}
     </main>
   )
 }
