@@ -1,6 +1,7 @@
 import styles from './styles.module.css';
 
 export const Pagination = ({ handleNextPage, handlePreviousPage, handlePageClick, totalPages, currentPage }) => {
+
   return (
     <div className={styles.pagination}>
       <button onClick={handlePreviousPage} className={styles.arrow} disabled={currentPage <= 1}>{'<'}</button>
