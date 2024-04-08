@@ -1,6 +1,14 @@
-.list {
+.columnList {
     display: flex;
     flex-direction: column;
+    gap: 12px;
+}
+
+.rowList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    box-sizing: border-box;
+    width: 100%;
     gap: 12px;
 }
 
@@ -25,6 +33,7 @@
     0% {
         background-position: 0% 0%;
     }
+
     100% {
         background-position: -135% 0%;
     }
